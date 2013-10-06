@@ -16,8 +16,6 @@
 		635DD5C21800DD070003C00F /* RooshAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 635DD5C11800DD070003C00F /* RooshAppDelegate.m */; };
 		635DD5C51800DD070003C00F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635DD5C31800DD070003C00F /* Main.storyboard */; };
 		635DD5C81800DD070003C00F /* Roosh.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 635DD5C61800DD070003C00F /* Roosh.xcdatamodeld */; };
-		635DD5CB1800DD070003C00F /* RooshMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635DD5CA1800DD070003C00F /* RooshMasterViewController.m */; };
-		635DD5CE1800DD070003C00F /* RooshDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635DD5CD1800DD070003C00F /* RooshDetailViewController.m */; };
 		635DD5D01800DD070003C00F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635DD5CF1800DD070003C00F /* Images.xcassets */; };
 		635DD5D71800DD070003C00F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635DD5D61800DD070003C00F /* XCTest.framework */; };
 		635DD5D81800DD070003C00F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635DD5AF1800DD070003C00F /* Foundation.framework */; };
@@ -25,6 +23,10 @@
 		635DD5DA1800DD070003C00F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635DD5B51800DD070003C00F /* CoreData.framework */; };
 		635DD5E21800DD070003C00F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 635DD5E01800DD070003C00F /* InfoPlist.strings */; };
 		635DD5E41800DD070003C00F /* RooshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 635DD5E31800DD070003C00F /* RooshTests.m */; };
+		635DD5F11800F3A30003C00F /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 635DD5F01800F3A30003C00F /* RatingView.m */; };
+		635DD5F61800FE020003C00F /* RooshDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635DD5F31800FE020003C00F /* RooshDetailViewController.m */; };
+		635DD5F71800FE020003C00F /* RooshMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635DD5F51800FE020003C00F /* RooshMasterViewController.m */; };
+		635DD5F91800FEE70003C00F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635DD5F81800FEE70003C00F /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,16 +53,19 @@
 		635DD5C11800DD070003C00F /* RooshAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RooshAppDelegate.m; sourceTree = "<group>"; };
 		635DD5C41800DD070003C00F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		635DD5C71800DD070003C00F /* Roosh.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Roosh.xcdatamodel; sourceTree = "<group>"; };
-		635DD5C91800DD070003C00F /* RooshMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RooshMasterViewController.h; sourceTree = "<group>"; };
-		635DD5CA1800DD070003C00F /* RooshMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RooshMasterViewController.m; sourceTree = "<group>"; };
-		635DD5CC1800DD070003C00F /* RooshDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RooshDetailViewController.h; sourceTree = "<group>"; };
-		635DD5CD1800DD070003C00F /* RooshDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RooshDetailViewController.m; sourceTree = "<group>"; };
 		635DD5CF1800DD070003C00F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		635DD5D51800DD070003C00F /* RooshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RooshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		635DD5D61800DD070003C00F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		635DD5DF1800DD070003C00F /* RooshTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RooshTests-Info.plist"; sourceTree = "<group>"; };
 		635DD5E11800DD070003C00F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		635DD5E31800DD070003C00F /* RooshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RooshTests.m; sourceTree = "<group>"; };
+		635DD5EF1800F3A30003C00F /* RatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RatingView.h; path = Roosh/RatingView.h; sourceTree = "<group>"; };
+		635DD5F01800F3A30003C00F /* RatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RatingView.m; path = Roosh/RatingView.m; sourceTree = "<group>"; };
+		635DD5F21800FE020003C00F /* RooshDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RooshDetailViewController.h; sourceTree = "<group>"; };
+		635DD5F31800FE020003C00F /* RooshDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RooshDetailViewController.m; sourceTree = "<group>"; };
+		635DD5F41800FE020003C00F /* RooshMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RooshMasterViewController.h; sourceTree = "<group>"; };
+		635DD5F51800FE020003C00F /* RooshMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RooshMasterViewController.m; sourceTree = "<group>"; };
+		635DD5F81800FEE70003C00F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635DD5F91800FEE70003C00F /* MapKit.framework in Frameworks */,
 				635DD5B21800DD070003C00F /* CoreGraphics.framework in Frameworks */,
 				635DD5B61800DD070003C00F /* CoreData.framework in Frameworks */,
 				635DD5B41800DD070003C00F /* UIKit.framework in Frameworks */,
@@ -92,6 +98,8 @@
 		635DD5A31800DD060003C00F = {
 			isa = PBXGroup;
 			children = (
+				635DD5EF1800F3A30003C00F /* RatingView.h */,
+				635DD5F01800F3A30003C00F /* RatingView.m */,
 				635DD5B71800DD070003C00F /* Roosh */,
 				635DD5DD1800DD070003C00F /* RooshTests */,
 				635DD5AE1800DD070003C00F /* Frameworks */,
@@ -111,6 +119,7 @@
 		635DD5AE1800DD070003C00F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				635DD5F81800FEE70003C00F /* MapKit.framework */,
 				635DD5AF1800DD070003C00F /* Foundation.framework */,
 				635DD5B11800DD070003C00F /* CoreGraphics.framework */,
 				635DD5B31800DD070003C00F /* UIKit.framework */,
@@ -123,13 +132,13 @@
 		635DD5B71800DD070003C00F /* Roosh */ = {
 			isa = PBXGroup;
 			children = (
+				635DD5F21800FE020003C00F /* RooshDetailViewController.h */,
+				635DD5F31800FE020003C00F /* RooshDetailViewController.m */,
+				635DD5F41800FE020003C00F /* RooshMasterViewController.h */,
+				635DD5F51800FE020003C00F /* RooshMasterViewController.m */,
 				635DD5C01800DD070003C00F /* RooshAppDelegate.h */,
 				635DD5C11800DD070003C00F /* RooshAppDelegate.m */,
 				635DD5C31800DD070003C00F /* Main.storyboard */,
-				635DD5C91800DD070003C00F /* RooshMasterViewController.h */,
-				635DD5CA1800DD070003C00F /* RooshMasterViewController.m */,
-				635DD5CC1800DD070003C00F /* RooshDetailViewController.h */,
-				635DD5CD1800DD070003C00F /* RooshDetailViewController.m */,
 				635DD5CF1800DD070003C00F /* Images.xcassets */,
 				635DD5C61800DD070003C00F /* Roosh.xcdatamodeld */,
 				635DD5B81800DD070003C00F /* Supporting Files */,
@@ -264,9 +273,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				635DD5CB1800DD070003C00F /* RooshMasterViewController.m in Sources */,
-				635DD5CE1800DD070003C00F /* RooshDetailViewController.m in Sources */,
 				635DD5C21800DD070003C00F /* RooshAppDelegate.m in Sources */,
+				635DD5F61800FE020003C00F /* RooshDetailViewController.m in Sources */,
+				635DD5F71800FE020003C00F /* RooshMasterViewController.m in Sources */,
+				635DD5F11800F3A30003C00F /* RatingView.m in Sources */,
 				635DD5BE1800DD070003C00F /* main.m in Sources */,
 				635DD5C81800DD070003C00F /* Roosh.xcdatamodeld in Sources */,
 			);
