@@ -21,7 +21,8 @@
     // Override point for customization after application launch.
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     RooshMasterViewController *controller = (RooshMasterViewController *)navigationController.topViewController;
-    controller.managedObjectContext = self.managedObjectContext;
+    // TODO: uncomment next line for NSFetchedResultsControllerDelegates
+    //controller.managedObjectContext = self.managedObjectContext;
     return YES;
 }
 							

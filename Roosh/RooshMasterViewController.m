@@ -10,6 +10,9 @@
 
 #import "RooshDetailViewController.h"
 
+#import "RestroomDataController.h"
+#import "Restroom.h"
+
 @interface RooshMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
@@ -27,7 +30,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    //UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     //self.navigationItem.rightBarButtonItem = addButton;
 }
 
@@ -61,24 +64,35 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 0;
+    NSLog(@"querrying number of sections");
+    return 1;
     //return [[self.fetchedResultsController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return 0;
+    NSLog(@"querying number of items in section %d", section);
+    //id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    return [self.dataController countOfList];
+    switch (section)
+    {
+        case 0:
+            return 10;
+        default:
+            return 0;
+    }
     //return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    NSLog(@"getting a cell for index %@", [indexPath description]);
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"facility" forIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
 
+/*
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
@@ -106,6 +120,12 @@
     // The table view should not be re-orderable.
     return NO;
 }
+*/
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 70;
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -116,8 +136,20 @@
     }
 }
 
-#pragma mark - Fetched results controller
+- (RestroomDataController*)dataController
+{
+    if(_dataController != nil) {
+        return _dataController;
+    }
+    
+    // TODO: Fetch real data from the web whenever the webapp is live
+    NSLog(@"allocating data controller");
+    self.dataController = [[RestroomDataController alloc] init];
+    return _dataController;
+}
 
+/*
+#pragma mark - Fetched results controller
 - (NSFetchedResultsController *)fetchedResultsController
 {
     if (_fetchedResultsController != nil) {
@@ -126,14 +158,14 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Facility" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -153,8 +185,10 @@
 	}
     
     return _fetchedResultsController;
-}    
+}
+*/
 
+/*
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView beginUpdates];
@@ -204,6 +238,7 @@
 {
     [self.tableView endUpdates];
 }
+*/
 
 /*
 // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
@@ -217,8 +252,16 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    NSLog(@"configuring a cell for %@", [indexPath description]);
+    //NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    //cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    Restroom *restroom = [self.dataController objectInListAtIndex:indexPath.row];
+    if(restroom)
+    {
+        ((UILabel*)[cell viewWithTag:1]).text = restroom.name;
+        ((UILabel*)[cell viewWithTag:2]).text = restroom.address;
+        ((UILabel*)[cell viewWithTag:3]).text = @"2 km";
+    }
 }
 
 @end

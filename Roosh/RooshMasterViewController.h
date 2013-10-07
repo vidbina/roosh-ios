@@ -10,9 +10,13 @@
 
 #import <CoreData/CoreData.h>
 
-@interface RooshMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@class RestroomDataController;
+
+@interface RooshMasterViewController : UITableViewController <UITableViewDelegate, NSFetchedResultsControllerDelegate>
+
+@property (strong, nonatomic) RestroomDataController *dataController;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
+ 
 @end
