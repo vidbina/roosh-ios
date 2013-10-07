@@ -27,6 +27,9 @@
 		635DD5F61800FE020003C00F /* RooshDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635DD5F31800FE020003C00F /* RooshDetailViewController.m */; };
 		635DD5F71800FE020003C00F /* RooshMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635DD5F51800FE020003C00F /* RooshMasterViewController.m */; };
 		635DD5F91800FEE70003C00F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635DD5F81800FEE70003C00F /* MapKit.framework */; };
+		635DD5FC18010DD60003C00F /* Restroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 635DD5FB18010DD60003C00F /* Restroom.m */; };
+		635DD5FF1801103F0003C00F /* RestroomDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635DD5FE1801103F0003C00F /* RestroomDataController.m */; };
+		63F4107118022E2D003E1DF7 /* RestroomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F4107018022E2D003E1DF7 /* RestroomsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,12 @@
 		635DD5F41800FE020003C00F /* RooshMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RooshMasterViewController.h; sourceTree = "<group>"; };
 		635DD5F51800FE020003C00F /* RooshMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RooshMasterViewController.m; sourceTree = "<group>"; };
 		635DD5F81800FEE70003C00F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		635DD5FA18010DD60003C00F /* Restroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Restroom.h; path = Models/Restroom.h; sourceTree = "<group>"; };
+		635DD5FB18010DD60003C00F /* Restroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Restroom.m; path = Models/Restroom.m; sourceTree = "<group>"; };
+		635DD5FD1801103F0003C00F /* RestroomDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestroomDataController.h; path = Models/RestroomDataController.h; sourceTree = "<group>"; };
+		635DD5FE1801103F0003C00F /* RestroomDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestroomDataController.m; path = Models/RestroomDataController.m; sourceTree = "<group>"; };
+		63F4106F18022E2D003E1DF7 /* RestroomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestroomsViewController.h; path = Controllers/RestroomsViewController.h; sourceTree = "<group>"; };
+		63F4107018022E2D003E1DF7 /* RestroomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestroomsViewController.m; path = Controllers/RestroomsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +145,12 @@
 				635DD5F31800FE020003C00F /* RooshDetailViewController.m */,
 				635DD5F41800FE020003C00F /* RooshMasterViewController.h */,
 				635DD5F51800FE020003C00F /* RooshMasterViewController.m */,
+				63F4106F18022E2D003E1DF7 /* RestroomsViewController.h */,
+				63F4107018022E2D003E1DF7 /* RestroomsViewController.m */,
+				635DD5FA18010DD60003C00F /* Restroom.h */,
+				635DD5FB18010DD60003C00F /* Restroom.m */,
+				635DD5FD1801103F0003C00F /* RestroomDataController.h */,
+				635DD5FE1801103F0003C00F /* RestroomDataController.m */,
 				635DD5C01800DD070003C00F /* RooshAppDelegate.h */,
 				635DD5C11800DD070003C00F /* RooshAppDelegate.m */,
 				635DD5C31800DD070003C00F /* Main.storyboard */,
@@ -276,8 +291,11 @@
 				635DD5C21800DD070003C00F /* RooshAppDelegate.m in Sources */,
 				635DD5F61800FE020003C00F /* RooshDetailViewController.m in Sources */,
 				635DD5F71800FE020003C00F /* RooshMasterViewController.m in Sources */,
+				63F4107118022E2D003E1DF7 /* RestroomsViewController.m in Sources */,
 				635DD5F11800F3A30003C00F /* RatingView.m in Sources */,
+				635DD5FF1801103F0003C00F /* RestroomDataController.m in Sources */,
 				635DD5BE1800DD070003C00F /* main.m in Sources */,
+				635DD5FC18010DD60003C00F /* Restroom.m in Sources */,
 				635DD5C81800DD070003C00F /* Roosh.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +505,7 @@
 				635DD5E91800DD070003C00F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		635DD5EA1800DD070003C00F /* Build configuration list for PBXNativeTarget "RooshTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +514,7 @@
 				635DD5EC1800DD070003C00F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
